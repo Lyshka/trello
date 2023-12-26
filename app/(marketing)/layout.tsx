@@ -1,11 +1,8 @@
+import { ILayout } from "@/types/layoutTypes";
 import { Footer } from "./_components/Footer";
 import { Navbar } from "./_components/Navbar";
 
-interface IMarketingLayout {
-  children: React.ReactNode;
-}
-
-const MarketingLayout = ({ children }: IMarketingLayout) => {
+const MarketingLayout = ({ children }: ILayout) => {
   return (
     <div className="h-full bg-slate-100">
       <Navbar />
