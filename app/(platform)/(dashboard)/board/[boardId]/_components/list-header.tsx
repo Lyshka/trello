@@ -7,6 +7,7 @@ import { List } from "@prisma/client";
 import { useState, useRef, ElementRef } from "react";
 import { toast } from "sonner";
 import { useEventListener } from "usehooks-ts";
+import { ListOptions } from "./list-options";
 
 interface ListHeaderProps {
   data: List;
@@ -91,11 +92,13 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
       ) : (
         <div
           onClick={enableEditing}
-          className="w-full text-sm px-2.5 py-1 h-7 font-medium border-transparent"
+          className="w-full text-sm px-2.5 py-1 h-auto font-medium border-transparent break-all"
         >
           {title}
         </div>
       )}
+
+      <ListOptions onAddCard={() => {}} data={data} />
     </div>
   );
 };
